@@ -1,0 +1,170 @@
+\documentclass[12pt]{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny\color{gray},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single
+}
+
+\lstset{style=mystyle}
+
+\title{Soft Computing: Fuzzy and Crisp Composition, and Fuzzy Equivalence}
+\author{Dhruba Saha \\
+Roll no: B.Sc(Sem-VI)Comp-05 \\
+B.Sc(Honors) 3rd year 6th sem \\
+Department of Computer \& System Sciences \\
+Siksha Bhavana \\
+Visva Bharati}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\section*{Dependencies}
+The following dependencies are required for the implementation of the assignment:
+
+\begin{itemize}
+    \item Python 3.x
+    \item NumPy library
+\end{itemize}
+
+\section*{Github Repository}
+\url{https://github.com/dhrubasaha08/DSE-4-Soft-Computing-Lab}
+
+\newpage
+\section{Fuzzy composition using max-min}
+
+\lstinputlisting[language=Python, caption=Fuzzy max-min composition]{fuzzy_max_min_composition.py}
+
+\newpage
+\begin{lstlisting}[caption=Output of Fuzzy max-min composition]
+Enter dimensions of matrix A (n, m): 2 2
+Enter row 1: 0.4 0.6
+Enter row 2: 0.7 0.3
+Enter dimensions of matrix B (m, p): 2 2
+Enter row 1: 0.6 0.9
+Enter row 2: 0.5 0.6
+Matrix A:
+ [[0.4 0.6]
+ [0.7 0.3]]
+Matrix B:
+ [[0.6 0.9]
+ [0.5 0.6]]
+Fuzzy max-min composition:
+ [[0.5 0.6]
+ [0.6 0.7]]
+\end{lstlisting}
+
+\newpage
+\section{Fuzzy composition using max-product}
+
+\lstinputlisting[language=Python, caption=Fuzzy max-product composition]{fuzzy_max_product_composition.py}
+
+\newpage
+\begin{lstlisting}[caption=Output of Fuzzy max-product composition]
+Enter dimensions of matrix A (n, m): 2 2
+Enter row 1: 0.7 0.5
+Enter row 2: 0.6 0.1
+Enter dimensions of matrix B (m, p): 2 2
+Enter row 1: 0.6 0.7
+Enter row 2: 0.1 0.1
+Matrix A:
+ [[0.7 0.5]
+ [0.6 0.1]]
+Matrix B:
+ [[0.6 0.7]
+ [0.1 0.1]]
+Fuzzy max-product composition:
+ [[0.42 0.49]
+ [0.36 0.42]]
+\end{lstlisting}
+
+\newpage
+\section{Crisp composition using max-min}
+
+\lstinputlisting[language=Python, caption=Crisp max-min composition]{crisp_max_min_composition.py}
+
+\newpage
+\begin{lstlisting}[caption=Output of Crisp max-min composition]
+Enter dimensions of matrix A (n, m): 2 2
+Enter row 1: 1 0
+Enter row 2: 1 1
+Enter dimensions of matrix B (m, p): 2 2
+Enter row 1: 1 0
+Enter row 2: 0 1
+Matrix A:
+ [[1 0]
+ [1 1]]
+Matrix B:
+ [[1 0]
+ [0 1]]
+Crisp max-min composition:
+ [[1 0]
+ [1 1]]
+\end{lstlisting}
+
+\newpage
+\section{Crisp composition using max-product}
+
+\lstinputlisting[language=Python, caption=Crisp max-product composition]{crisp_max_product_composition.py}
+
+\newpage
+\begin{lstlisting}[caption=Output of Crisp max-product composition]
+Enter dimensions of matrix A (n, m): 2 2
+Enter row 1: 1 0
+Enter row 2: 0 0
+Enter dimensions of matrix B (m, p): 2 2
+Enter row 1: 1 0
+Enter row 2: 1 0
+Matrix A:
+ [[1 0]
+ [0 0]]
+Matrix B:
+ [[1 0]
+ [1 0]]
+Crisp max-product composition:
+ [[1 0]
+ [0 0]]
+\end{lstlisting}
+
+\newpage
+\section{Check whether a Fuzzy relation satisfies the equivalence property or not}
+
+\lstinputlisting[language=Python, caption=Fuzzy equivalence]{fuzzy_equivalence_check.py}
+
+\begin{lstlisting}[caption=Output of Check Fuzzy relation equivalence]
+Enter dimensions of matrix R (n, m): 2 2
+Enter row 1: 0.5 0.5   
+Enter row 2: 0.5 0.5
+Matrix R:
+ [[0.5 0.5]
+ [0.5 0.5]]
+The Fuzzy relation satisfies the equivalence property.
+
+
+Enter dimensions of matrix R (n, m): 2 2
+Enter row 1: 0.6 0.5
+Enter row 2: 0.8 0.1
+Matrix R:
+ [[0.6 0.5]
+ [0.8 0.1]]
+The Fuzzy relation does not satisfy the equivalence property.
+\end{lstlisting}
+
+\end{document}
